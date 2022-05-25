@@ -21,10 +21,13 @@ public class GuiScreenMixin {
                     target = "Ljava/util/List;size()I",
                     shift = At.Shift.BEFORE),
             slice = @Slice(
-                    from = @At(
-                            value = "INVOKE",
-                            target = "Lnet/minecraft/client/gui/GuiScreen;drawGradientRect(IIIIII)V",
-                            ordinal = 0)), locals = LocalCapture.PRINT)
+						from = @At(
+								value = "INVOKE",
+								target = "Lnet/minecraft/client/gui/GuiScreen;drawGradientRect(IIIIII)V",
+								ordinal = 0)
+					)
+					// ,locals = LocalCapture.PRINT
+			)
     private void onDrawHoveringText(List stringLines, int pixelX, int pixelY, FontRenderer fontRenderer, CallbackInfo callbackInfo) {
         // TODO
         /*
